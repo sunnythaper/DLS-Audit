@@ -1,5 +1,5 @@
 {
-  "name": "DLS Audit",
+  "name": "dls-audit",
   "version": "1.0.0",
   "description": "A tool to help build better designs based on DLS within Figma",
   "main": "code.js",
