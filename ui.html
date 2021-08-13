@@ -1,0 +1,36 @@
+<style>
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .header {
+    background: #006FCF;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  .layer {
+    color: #7B61FF;
+    font-size: 0.75em;
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .report {
+    background: #F7F8F9;
+    color: #B42C01 !important;
+  }
+</style>
+
+<div id="breakdown"></div>
+
+<script>
+  const breakdownElement = document.getElementById("breakdown")
+
+  onmessage = ({data: {pluginMessage}}) => {
+    breakdownElement.innerHTML = pluginMessage
+  }
+</script>

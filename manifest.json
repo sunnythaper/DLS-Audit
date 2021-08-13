@@ -1,0 +1,7 @@
+{
+  "name": "DLS Audit",
+  "id": "1005970002009058672",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}

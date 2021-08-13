@@ -1,0 +1,14 @@
+{
+  "name": "DLS Audit",
+  "version": "1.0.0",
+  "description": "A tool to help build better designs based on DLS",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "Sunny Thaper",
+  "license": "ISC",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.28.0"
+  }
+}
