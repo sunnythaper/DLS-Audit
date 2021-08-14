@@ -1,6 +1,223 @@
 <style>
+  /* FOUNDATION */
+
+  html {
+    font-size: 100%;
+  }
+
   body {
-    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    margin: 0px;
+  }
+
+  /* TYPOGRAPHY */
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  .heading1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+  }
+
+  .heading2 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.375rem;
+  }
+
+  .heading3 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .heading4 {
+    font-family: BentonSans, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .heading5 {
+    font-family: BentonSans, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+  }
+
+  .heading6 {
+    font-family: BentonSans, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 2.375rem;
+    line-height: 2.75rem;
+  }
+
+  .headingLg {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+
+  @media (min-width: 768px) {  .headingLg {
+      font-size: 2rem;
+      line-height: 2.375rem;
+    }
+  }
+
+  .heading7G {
+    font-family: Guardian, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+
+  .heading6G {
+    font-family: Guardian, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 2.375rem;
+    line-height: 2.75rem;
+  }
+
+  .heading5G {
+    font-family: Guardian, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+  }
+
+  .heading4G {
+    font-family: Guardian, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .body1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+  }
+
+  .body2 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.375rem;
+  }
+
+  .body3 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .label1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    color: #53565a;
+  }
+
+  .label2 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.375rem;
+    color: #333;
+  }
+
+  .label3 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #333;
+  }
+
+  .legal1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  .legal2 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+  }
+
+  /* CONTROLS BAR */
+
+  #controls {
+    background: #fff;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: sticky;
+    top: 0px;
+  }
+
+  button {
+    background: #006FCF;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 14px 30px;
+    width: 180px;
+  }
+
+  button:hover {
+    background: #0061B6;
+  }
+
+  button:active {
+    background: #00549C;
+  }
+
+  button:focus {
+    border: none;
+  }
+
+  /* LAYERS INSPECTOR */
+
+  #mainApp {
+    padding: 20px;
   }
 
   .header {
@@ -14,7 +231,7 @@
 
   .layer {
     color: #7B61FF;
-    font-size: 0.75em;
+    font-size: 0.8125rem;
     margin: 0px;
     padding: 10px;
   }
@@ -25,12 +242,20 @@
   }
 </style>
 
-<div id="breakdown"></div>
+<div id="controls">
+  <button class="body3" id="Rescan" onclick="rescan()">Rescan</button>
+</div>
+
+<div id="mainApp"></div>
 
 <script>
-  const breakdownElement = document.getElementById("breakdown")
+  const mainAppElement = document.getElementById("mainApp")
+
+  function rescan() {
+    parent.postMessage({ pluginMessage: { rescan: true } }, '*');
+  }
 
   onmessage = ({data: {pluginMessage}}) => {
-    breakdownElement.innerHTML = pluginMessage
+    mainAppElement.innerHTML = pluginMessage
   }
 </script>

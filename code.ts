@@ -216,7 +216,7 @@ function checkTextStyle(node, indent) {
 // #  MAIN APP
 // #################################################################################################
 
-function getMessage() {
+function App() {
   const selection = figma.currentPage.selection[0]
   var message = ""
 
@@ -234,4 +234,11 @@ figma.showUI(__html__, {
   width: 600,
   height: 1000
 })
-figma.ui.postMessage(getMessage())
+
+figma.ui.postMessage(App())
+
+figma.ui.onmessage = (message) => {
+  if (message.rescan) {
+    figma.ui.postMessage(App())
+  }
+}
