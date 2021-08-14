@@ -2,8 +2,12 @@
 // #  HEADERS
 // #################################################################################################
 
-function getHeader(content) {
-  return '<p class="header">' + content + '</p>'
+function getHeader(content, id = "") {
+  if (id) {
+    return `<p class="header" id="${id}">${content}</p>`
+  } else {
+    return `<p class="header">${content}</p>`
+  }
 }
 
 // #################################################################################################
@@ -22,7 +26,7 @@ function getLayers(node, indent: number = 0) {
   let layers = ""
 
   if (indent == 0) {
-    layers += getHeader("Layers");
+    layers += getHeader("Layers", "header-layers");
   }
 
   layers += getLayer(node, indent);
