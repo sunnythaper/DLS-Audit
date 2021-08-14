@@ -187,10 +187,11 @@
 
   #controls {
     background: #fff;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ECEDEE;
+    bottom: 0px;
     padding: 20px;
     position: sticky;
-    top: 0px;
+    text-align: right;
   }
 
   button {
@@ -217,26 +218,25 @@
   /* LAYERS INSPECTOR */
 
   #mainApp {
+    min-height: 908px;
     padding: 20px;
   }
 
   .header {
-    background: #006FCF;
+    background: #333;
     color: #fff;
-    display: block;
     margin-bottom: 10px;
     padding: 10px;
-    text-transform: uppercase;
   }
 
   #header-layers {
+    border-top: 20px solid #fff;
     position: sticky;
-    top: 112px;
+    top: 0px;
   }
 
   .layer {
     color: #7B61FF;
-    font-size: 0.8125rem;
     margin: 0px;
     padding: 10px;
   }
@@ -247,11 +247,11 @@
   }
 </style>
 
+<div id="mainApp"></div>
+
 <div id="controls">
   <button class="body3" id="Rescan" onclick="rescan()">Rescan</button>
 </div>
-
-<div id="mainApp"></div>
 
 <script>
   const mainAppElement = document.getElementById("mainApp")

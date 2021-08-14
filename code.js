@@ -3,17 +3,17 @@
 // #################################################################################################
 function getHeader(content, id = "") {
     if (id) {
-        return `<p class="header" id="${id}">${content}</p>`;
+        return `<p class="header body3" id="${id}">${content}</p>`;
     }
     else {
-        return `<p class="header">${content}</p>`;
+        return `<p class="header body3">${content}</p>`;
     }
 }
 // #################################################################################################
 // #  GET TYPE
 // #################################################################################################
 function getType(node) {
-    return getHeader("Type") + "<p>" + node.type + "</p>";
+    return `${getHeader("Type")}<p>${node.type}</p>`;
 }
 // #################################################################################################
 // #  GET LAYERS
@@ -34,7 +34,7 @@ function getLayers(node, indent = 0) {
     return layers;
 }
 function getLayer(node, indent) {
-    var layer = '<p class="layer">';
+    var layer = '<p class="layer legal1">';
     layer += getLayerIndent(indent, true);
     layer += getLayerIcon(node);
     layer += node.name + "</p>";
@@ -106,7 +106,7 @@ function getInspection(node, indent) {
     return inspection;
 }
 function getReport(content, indent) {
-    return ('<div class="layer report">' + getLayerIndent(indent + 1, true) + "&nbsp;" + content + '</div>');
+    return `<div class="layer report legal1">${getLayerIndent(indent + 1, true)}&nbsp;${content}</div>`;
 }
 function checkAutolayout(node, indent) {
     var report = "";
