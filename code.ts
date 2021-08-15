@@ -150,7 +150,7 @@ function checkAutolayout(node, indent) {
 function checkColorStyle(node, indent) {
   var report = ""
 
-  if (node.type != "Document" && node.type != "Page" && node.type != "Slice" && (node.fills || node.strokes) {
+  if (node.type != "Document" && node.type != "Page" && node.type != "Slice" && (node.fills || node.strokes)) {
     if (!node.fillStyleId && node.fills[0]) {
       report += getReport("Layer is missing a fill color style", indent)
     }
