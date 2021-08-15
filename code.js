@@ -119,7 +119,7 @@ function checkAutolayout(node, indent) {
 }
 function checkColorStyle(node, indent) {
     var report = "";
-    if (node.type != "Document" && node.type != "Page" && node.type != "Slice") {
+    if (node.type != "Document" && node.type != "Page" && node.type != "Slice" && (node.fills || node.strokes)) {
         if (!node.fillStyleId && node.fills[0]) {
             report += getReport("Layer is missing a fill color style", indent);
         }
@@ -139,11 +139,13 @@ function checkDefaultName(node, indent) {
 }
 function checkFillContainer(node, indent) {
     var report = "";
-    if (node.type == "INSTANCE" && (node.layoutAlign == "INHERIT" && node.layoutGrow == 0)) {
-        // TODO: Ignore for components such as Text Button and Checkbox and Icon
-        report += getReport("Verify if this layer should fill container. ", indent);
+    const exceptionNames = RegExp(/(((.*) Badge)|((.*) Button)|Checkbox|Flag|Glyph|Icon|((.*) Link)|Tag)/);
+    if (node.type == "INSTANCE" && (node.layoutAlign == "INHERIT" && node.layoutGrow == 0) && (!exceptionNames.test(node.children[0].name))) {
+        if (!exceptionNames.test(node.mainComponent.parent.name)) {
+            report += getReport("Verify if this layer should fill container. ", indent);
+        }
     }
-    else if ((node.type == "TEXT" || node.type == "FRAME" || node.type == "GROUP") && (node.layoutAlign == "INHERIT" && node.layoutGrow == 0)) {
+    else if ((node.type == "TEXT" || node.type == "FRAME " || node.type == "GROUP") && (node.layoutAlign == "INHERIT" && node.layoutGrow == 0)) {
         report += getReport("Verify if this layer should fill container.", indent);
     }
     return report;
@@ -173,8 +175,13 @@ function checkTextStyle(node, indent) {
 function App() {
     const selection = figma.currentPage.selection[0];
     var message = "";
-    message += getType(selection);
-    message += getLayers(selection);
+    if (selection) {
+        message += getType(selection);
+        message += getLayers(selection);
+    }
+    else {
+        message += `<p class="body3">You must select an element first.</p>`;
+    }
     return message;
 }
 // #################################################################################################
